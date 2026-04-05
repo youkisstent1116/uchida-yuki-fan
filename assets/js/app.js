@@ -87,7 +87,6 @@ async function initVoicePostPage() {
     setHTML('post-content', `
       <div class="post-meta">
         <div class="post-date">${formatDate(post.original_date)}</div>
-        <h1 class="post-title">${escapeHTML(post.title || '(無標題)')}</h1>
       </div>
       <div class="post-body">${bodyLines}</div>
       <div class="post-notice">
@@ -129,7 +128,6 @@ function voiceCardHTML(post) {
   return `
     <a class="voice-card" href="voice-post.html?id=${post.id}">
       <div class="voice-date">${formatDate(post.original_date)}</div>
-      <div class="voice-title">${escapeHTML(post.title || '(無標題)')}</div>
       <div class="voice-excerpt">${escapeHTML(getExcerpt(post.translated_content))}</div>
     </a>`;
 }
