@@ -196,7 +196,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 /* ── Post detail ── */
 .post-meta { margin-bottom: 32px; }
 .post-date {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--text-muted);
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.1em;
@@ -205,7 +205,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 .post-title { font-size: 22px; font-weight: 400; line-height: 1.5; }
 .post-body {
   font-size: 15px;
-  line-height: 2.1;
+  line-height: 1.85;
   color: var(--text-primary);
 }
 .post-body p { margin-bottom: 1.5em; }
