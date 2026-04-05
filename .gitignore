@@ -1,0 +1,10 @@
+# 本機設定檔（不上傳）
+.claude/
+
+# Python 暫存
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS 系統檔
+.DS_Store
