@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ action }} Voice{% endblock %}
+{% block content %}
+<h2 class="pg-title">{{ action }} Voice 翻譯</h2>
+
+<div class="card" style="max-width:700px">
+  <form method="post">
+    <div class="field">
+      <label>原文日期（原始網站上的發文日期）</label>
+      <input type="date" name="original_date" value="{{ post.original_date if post else '' }}" required>
+    </div>
+    <div class="field">
+      <label>標題（自訂，方便識別，例如「春天來了」）</label>
+      <input type="text" name="title" value="{{ post.title if post else '' }}" placeholder="可留空">
+    </div>
+    <div class="field">
+      <label>翻譯內容</label>
+      <textarea name="translated_content" rows="14"
+        placeholder="在此貼上繁體中文翻譯…" required>{{ post.translated_content if post else '' }}</textarea>
+    </div>
+    <div class="field">
+      <div class="chk">
+        <input type="checkbox" name="published" id="pub"
+          {{ 'checked' if (post and post.published) or not post }}>
+        <label for="pub">立即發布</label>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:6px">
+      <button type="submit" class="btn btn-p">儲存</button>
+      <a href="/voice" class="btn btn-o">取消</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}{{ action }} Schedule{% endblock %}
+{% block content %}
+<h2 class="pg-title">{{ action }} Schedule 翻譯</h2>
+
+<div class="card" style="max-width:700px">
+  <form method="post">
+    <div class="field-row">
+      <div class="field">
+        <label>開始日期</label>
+        <input type="date" name="date" value="{{ post.date if post else '' }}" required>
+      </div>
+      <div class="field">
+        <label>結束日期（可選，用於跨期刊載等）</label>
+        <input type="date" name="end_date" value="{{ post.end_date if post else '' }}">
+      </div>
+    </div>
+    <div class="field">
+      <label>媒體類型</label>
+      <select name="media_type" required>
+        {% for t in ['電視','電影','廣播','雜誌','舞台劇','活動','其他'] %}
+          <option value="{{ t }}" {{ 'selected' if post and post.media_type == t }}>{{ t }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label>標題（節目／雜誌名稱）</label>
+      <input type="text" name="title" value="{{ post.title if post else '' }}" required>
+    </div>
+    <div class="field">
+      <label>翻譯說明（可選，播出時間、內容詳情等）</label>
+      <textarea name="translated_content" rows="5"
+        placeholder="例：每週二晚上9點播出，内田有紀飾演…">{{ post.translated_content if post else '' }}</textarea>
+    </div>
+    <div class="field">
+      <label>相關連結（可選）</label>
+      <input type="url" name="link" value="{{ post.link if post else '' }}" placeholder="https://…">
+    </div>
+    <div class="field">
+      <div class="chk">
+        <input type="checkbox" name="published" id="pub"
+          {{ 'checked' if (post and post.published) or not post }}>
+        <label for="pub">立即發布</label>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:6px">
+      <button type="submit" class="btn btn-p">儲存</button>
+      <a href="/schedule" class="btn btn-o">取消</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Schedule 管理{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+  <h2 class="pg-title" style="margin-bottom:0">Schedule 行程</h2>
+  <a href="/schedule/new" class="btn btn-p">+ 新增</a>
+</div>
+
+{% if posts %}
+<table>
+  <thead>
+    <tr><th>日期</th><th>類型</th><th>標題</th><th>狀態</th><th>操作</th></tr>
+  </thead>
+  <tbody>
+    {% for p in posts %}
+    <tr>
+      <td style="font-size:12px;color:#999;white-space:nowrap">
+        {{ p.date }}{% if p.end_date %}<br>— {{ p.end_date }}{% endif %}
+      </td>
+      <td><span class="badge badge-type">{{ p.media_type }}</span></td>
+      <td>
+        <div>{{ p.title }}</div>
+        {% if p.translated_content %}
+          <div style="font-size:12px;color:#bbb;margin-top:2px">{{ p.translated_content[:50] }}…</div>
+        {% endif %}
+      </td>
+      <td>
+        <span class="badge {{ 'badge-on' if p.published else 'badge-off' }}">
+          {{ '已發布' if p.published else '草稿' }}
+        </span>
+      </td>
+      <td style="white-space:nowrap">
+        <a href="/schedule/{{ p.id }}/edit" class="btn btn-s btn-o">編輯</a>
+        <form method="post" action="/schedule/{{ p.id }}/toggle" style="display:inline">
+          <button class="btn btn-s btn-o">{{ '下架' if p.published else '上架' }}</button>
+        </form>
+        <form method="post" action="/schedule/{{ p.id }}/delete" style="display:inline"
+              onsubmit="return confirm('確定刪除此行程？')">
+          <button class="btn btn-s btn-del">刪除</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="empty">尚無行程，點擊「新增」開始新增</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}總覽{% endblock %}
+{% block content %}
+<h2 class="pg-title">總覽</h2>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">{{ voice_pub }}</div><div class="stat-l">已發布 Voice</div></div>
+  <div class="stat"><div class="stat-n">{{ voice_total }}</div><div class="stat-l">Voice 總計</div></div>
+  <div class="stat"><div class="stat-n">{{ sched_pub }}</div><div class="stat-l">已發布行程</div></div>
+  <div class="stat"><div class="stat-n">{{ sched_total }}</div><div class="stat-l">行程總計</div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+  <div class="card">
+    <div style="font-size:10px;letter-spacing:.3em;color:#aaa;margin-bottom:10px">VOICE</div>
+    <p style="font-size:13px;color:#666;margin-bottom:16px">管理 Voice 文章的繁體中文翻譯</p>
+    <a href="/voice/new" class="btn btn-p">+ 新增翻譯</a>
+    &nbsp;<a href="/voice" class="btn btn-o">管理列表</a>
+  </div>
+  <div class="card">
+    <div style="font-size:10px;letter-spacing:.3em;color:#aaa;margin-bottom:10px">SCHEDULE</div>
+    <p style="font-size:13px;color:#666;margin-bottom:16px">管理行程的繁體中文翻譯資訊</p>
+    <a href="/schedule/new" class="btn btn-p">+ 新增行程</a>
+    &nbsp;<a href="/schedule" class="btn btn-o">管理列表</a>
+  </div>
+</div>
+
+<div class="card">
+  <div style="font-size:10px;letter-spacing:.3em;color:#aaa;margin-bottom:12px">發布流程</div>
+  <ol style="font-size:13px;color:#555;line-height:2.2;padding-left:18px">
+    <li>在後台新增或編輯翻譯，勾選「立即發布」後儲存</li>
+    <li>開啟 GitHub Desktop，提交（Commit）變更</li>
+    <li>點選 Push origin，GitHub Pages 會自動更新網站</li>
+  </ol>
+</div>
+{% endblock %}

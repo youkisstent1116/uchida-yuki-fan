@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Voice 管理{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+  <h2 class="pg-title" style="margin-bottom:0">Voice 文章</h2>
+  <a href="/voice/new" class="btn btn-p">+ 新增</a>
+</div>
+
+{% if posts %}
+<table>
+  <thead>
+    <tr><th>原文日期</th><th>標題</th><th>狀態</th><th>操作</th></tr>
+  </thead>
+  <tbody>
+    {% for p in posts %}
+    <tr>
+      <td style="font-size:12px;color:#999;white-space:nowrap">{{ p.original_date }}</td>
+      <td>
+        <div>{{ p.title or '(無標題)' }}</div>
+        <div style="font-size:12px;color:#bbb;margin-top:2px">{{ p.translated_content[:60] }}…</div>
+      </td>
+      <td>
+        <span class="badge {{ 'badge-on' if p.published else 'badge-off' }}">
+          {{ '已發布' if p.published else '草稿' }}
+        </span>
+      </td>
+      <td style="white-space:nowrap">
+        <a href="/voice/{{ p.id }}/edit" class="btn btn-s btn-o">編輯</a>
+        <form method="post" action="/voice/{{ p.id }}/toggle" style="display:inline">
+          <button class="btn btn-s btn-o">{{ '下架' if p.published else '上架' }}</button>
+        </form>
+        <form method="post" action="/voice/{{ p.id }}/delete" style="display:inline"
+              onsubmit="return confirm('確定刪除這篇文章？')">
+          <button class="btn btn-s btn-del">刪除</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="empty">尚無文章，點擊「新增」開始翻譯</div>
+{% endif %}
+{% endblock %}
