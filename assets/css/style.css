@@ -112,7 +112,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   box-shadow: 0 2px 16px rgba(124, 106, 84, 0.09);
 }
 .voice-date {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-muted);
   letter-spacing: 0.1em;
   margin-bottom: 10px;
@@ -205,10 +205,10 @@ nav a:hover, nav a.active { color: var(--accent); }
 .post-title { font-size: 22px; font-weight: 400; line-height: 1.5; }
 .post-body {
   font-size: 15px;
-  line-height: 1.85;
+  line-height: 1.5;
   color: var(--text-primary);
 }
-.post-body p { margin-bottom: 1.5em; }
+.post-body p { margin-bottom: 0.4em; }
 .post-notice {
   margin-top: 52px;
   padding: 16px 20px;
