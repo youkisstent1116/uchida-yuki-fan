@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
-  --bg: #F9F7F4;
+  --bg: #F2F7FC;
   --bg-card: #FFFFFF;
   --text-primary: #1C1C1C;
   --text-secondary: #5A5A5A;
   --text-muted: #9A9A9A;
-  --border: #E8E2DA;
+  --border: #DAE6F0;
   --accent: #7C6A54;
   --accent-hover: #5C4E3C;
-  --accent-light: #F0EBE3;
+  --accent-light: #E6EFF7;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
