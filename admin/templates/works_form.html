@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}{{ action }} 作品{% endblock %}
+{% block content %}
+<h2 class="page-title">{{ action }}作品</h2>
+
+<div class="card" style="max-width: 720px;">
+  <form method="post">
+    <div style="display:grid; grid-template-columns:120px 1fr; gap:16px;">
+      <div class="field">
+        <label>年份</label>
+        <input type="number" name="year" value="{{ work.year if work else '' }}"
+               min="1990" max="2099" required placeholder="例：1994">
+      </div>
+      <div class="field">
+        <label>類型</label>
+        <select name="type" required>
+          {% for t in types %}
+            <option value="{{ t }}" {{ 'selected' if work and work.type == t }}>{{ t }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>作品名稱（日文原名）</label>
+      <input type="text" name="title" value="{{ work.title if work else '' }}" required
+             placeholder="例：時をかける少女">
+    </div>
+
+    <div class="field">
+      <label>中文譯名（可選）</label>
+      <input type="text" name="title_zh" value="{{ work.title_zh if work else '' }}"
+             placeholder="例：穿越時空的少女">
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field">
+        <label>飾演角色（可選）</label>
+        <input type="text" name="role" value="{{ work.role if work else '' }}"
+               placeholder="例：芳山和子">
+      </div>
+      <div class="field">
+        <label>電視台／發行（可選）</label>
+        <input type="text" name="network" value="{{ work.network if work else '' }}"
+               placeholder="例：フジテレビ">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>備註（可選）</label>
+      <textarea name="notes" rows="3"
+                placeholder="其他補充說明…">{{ work.notes if work else '' }}</textarea>
+    </div>
+
+    <div class="field">
+      <div class="checkbox-field">
+        <input type="checkbox" name="published" id="published"
+               {{ 'checked' if (work and work.published) or not work }}>
+        <label for="published" style="margin-bottom:0">立即發布</label>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; margin-top:8px;">
+      <button type="submit" class="btn btn-primary">儲存</button>
+      <a href="/works" class="btn btn-outline">取消</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
