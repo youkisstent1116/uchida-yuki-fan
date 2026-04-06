@@ -10,6 +10,72 @@
       "link": "https://www.tv-tokyo.co.jp/kyojin/index.html",
       "published": true,
       "created_at": "2026-04-06T09:28:49.360577"
+    },
+    {
+      "id": "sch_20260406_77b4a7",
+      "date": "2026-02-28",
+      "end_date": "2026-02-28",
+      "media_type": "雜誌",
+      "title": "家庭画報４月号『パリ・ミラノ・NYコレクション』特集",
+      "translated_content": "雜誌：家庭画報 4月号\r\n內田有紀身披 2026 年春夏 巴黎・米蘭・紐約時裝系列",
+      "link": "https://www.instagram.com/reels/DVcpA_wE8Wl/",
+      "published": true,
+      "created_at": "2026-04-06T09:32:57.843378"
+    },
+    {
+      "id": "sch_20260406_3f7628",
+      "date": "2026-03-14",
+      "end_date": "2026-03-14",
+      "media_type": "電視",
+      "title": "テレビ朝日　『博士ちゃん』　音楽のギモンSP",
+      "translated_content": "朝日電視台《博士ちゃん》",
+      "link": "https://www.tv-asahi.co.jp/hakasechan/backnumber3/0087/",
+      "published": true,
+      "created_at": "2026-04-06T09:33:58.023374"
+    },
+    {
+      "id": "sch_20260406_e95bc0",
+      "date": "2026-03-14",
+      "end_date": "2026-03-14",
+      "media_type": "電視",
+      "title": "フジテレビ　『国民的マジックの祭典！』",
+      "translated_content": "富士電視台 《國民級魔術盛典！世界認可的日本魔術師No.1決定戰》",
+      "link": "https://www.fujitv.co.jp/b_hp/magicfes/index.html",
+      "published": true,
+      "created_at": "2026-04-06T09:35:19.750744"
+    },
+    {
+      "id": "sch_20260406_cce385",
+      "date": "2026-03-25",
+      "end_date": "2026-03-25",
+      "media_type": "電視",
+      "title": "BS-TBS『ヒロシのぼっちキャンプ』ディレクターズカット版 第一夜",
+      "translated_content": "BS-TBS 《ヒロシのぼっちキャンプ（ヒロシ的獨自露營）》導演剪輯版 第一夜",
+      "link": "https://x.com/botti_bstbs",
+      "published": true,
+      "created_at": "2026-04-06T09:37:48.915078"
+    },
+    {
+      "id": "sch_20260406_911c81",
+      "date": "2026-03-30",
+      "end_date": "2026-03-30",
+      "media_type": "電視",
+      "title": "フジテレビ　『国民的ヒットの祭典』",
+      "translated_content": "富士電視台 《国民的ヒットの祭典（國民級熱播作品盛典）》",
+      "link": "https://www.fujitv.co.jp/b_hp/hit_festival/index.html",
+      "published": true,
+      "created_at": "2026-04-06T09:39:00.802903"
+    },
+    {
+      "id": "sch_20260406_576270",
+      "date": "2026-04-01",
+      "end_date": "2026-04-01",
+      "media_type": "電視",
+      "title": "BS-TBS『ヒロシのぼっちキャンプ』ディレクターズカット版 第二夜",
+      "translated_content": "BS-TBS 《ヒロシのぼっちキャンプ（ヒロシ的獨自露營）》導演剪輯版 第二夜",
+      "link": "https://x.com/botti_bstbs",
+      "published": true,
+      "created_at": "2026-04-06T09:39:30.473070"
     }
   ]
 }
