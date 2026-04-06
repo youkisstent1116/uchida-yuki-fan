@@ -488,6 +488,13 @@ body.a11y-mode *:focus-visible {
 .tag-舞台劇   { background: #D5F5E3; color: #1E8449; }
 .tag-其他    { background: #F0F0F0; color: #666; }
 
+.work-tag-col { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+.work-month {
+  font-size: 11px;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
 .work-info { }
 .work-title {
   font-size: 14px;
