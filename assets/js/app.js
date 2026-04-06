@@ -189,8 +189,10 @@ function scheduleItemHTML(post) {
     ? `<a href="${post.link}" target="_blank" rel="noopener" class="schedule-link">→ 詳細連結</a>` : '';
   return `
     <div class="schedule-item">
-      <div class="schedule-date">${dateStr}</div>
-      <div><span class="schedule-type">${escapeHTML(post.media_type)}</span></div>
+      <div class="schedule-item-top">
+        <div class="schedule-date">${dateStr}</div>
+        <span class="schedule-type">${escapeHTML(post.media_type)}</span>
+      </div>
       <div class="schedule-content">
         <div class="schedule-title">${escapeHTML(post.title)}</div>
         ${desc}${link}
