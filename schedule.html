@@ -19,7 +19,7 @@
     <div class="header-right">
       <nav>
         <a href="voice.html">VOICE</a>
-        <a href="schedule.html" class="active">SCHEDULE</a>
+        <a href="schedule.html" class="active" aria-current="page">SCHEDULE</a>
       </nav>
       <div class="a11y-controls" role="group" aria-label="顯示設定">
         <button class="ctrl-btn" id="btn-font-down" aria-label="縮小字體">A−</button>
@@ -36,10 +36,10 @@
     <div class="page-label">Schedule</div>
     <div class="page-title-jp">内田有紀的近期行程</div>
   </div>
-  <div class="schedule-list" id="schedule-list">
+  <div class="schedule-list" id="schedule-list" aria-live="polite" aria-label="行程列表">
     <div class="loading">讀取中…</div>
   </div>
-  <div class="pagination" id="schedule-pagination"></div>
+  <nav class="pagination" id="schedule-pagination" aria-label="分頁導覽"></nav>
 </main>
 
 <footer class="site-footer">
