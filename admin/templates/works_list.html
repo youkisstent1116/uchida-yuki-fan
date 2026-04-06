@@ -10,7 +10,7 @@
 <table>
   <thead>
     <tr>
-      <th>年份</th>
+      <th>年份／月份</th>
       <th>類型</th>
       <th>作品名稱</th>
       <th>角色</th>
@@ -21,7 +21,10 @@
   <tbody>
     {% for work in works %}
     <tr>
-      <td style="font-family:monospace; color:#888;">{{ work.year }}</td>
+      <td style="font-family:monospace; color:#888;">
+        {{ work.year }}
+        {% if work.month %}<span style="color:#bbb; font-size:11px;">· {{ work.month }}月</span>{% endif %}
+      </td>
       <td><span class="badge" style="background:#f0ebe3; color:#7c6a54;">{{ work.type }}</span></td>
       <td>
         <div style="font-size:14px;">{{ work.title }}</div>
