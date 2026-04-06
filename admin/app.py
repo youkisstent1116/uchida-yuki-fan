@@ -183,6 +183,7 @@ def works_new():
         data['works'].append({
             'id': new_id('work'),
             'year': int(request.form['year']),
+            'month': int(request.form.get('month', 0)),
             'type': request.form['type'],
             'title': request.form['title'].strip(),
             'title_zh': request.form.get('title_zh', '').strip(),
@@ -207,6 +208,7 @@ def works_edit(wid):
     if request.method == 'POST':
         work.update({
             'year': int(request.form['year']),
+            'month': int(request.form.get('month', 0)),
             'type': request.form['type'],
             'title': request.form['title'].strip(),
             'title_zh': request.form.get('title_zh', '').strip(),
