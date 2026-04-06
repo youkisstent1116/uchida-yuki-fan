@@ -10,19 +10,28 @@
 <body>
 
 <header class="site-header">
+  <a href="#main-content" class="skip-link">跳到主要內容</a>
   <div class="header-inner">
     <a href="index.html" class="site-title">
       住海邊的帳篷君
       <small>UCHIDA YUKI FAN PAGE</small>
     </a>
-    <nav>
-      <a href="voice.html" class="active">VOICE</a>
-      <a href="schedule.html">SCHEDULE</a>
-    </nav>
+    <div class="header-right">
+      <nav>
+        <a href="voice.html" class="active">VOICE</a>
+        <a href="schedule.html">SCHEDULE</a>
+      </nav>
+      <div class="a11y-controls" role="group" aria-label="顯示設定">
+        <button class="ctrl-btn" id="btn-font-down" aria-label="縮小字體">A−</button>
+        <button class="ctrl-btn" id="btn-font-up"   aria-label="放大字體">A+</button>
+        <button class="ctrl-btn" id="btn-dark"      aria-label="切換夜間模式">🌙</button>
+        <button class="ctrl-btn" id="btn-a11y"      aria-label="切換無障礙模式">♿</button>
+      </div>
+    </div>
   </div>
 </header>
 
-<main class="main-content" style="max-width: 680px;">
+<main id="main-content" class="main-content" style="max-width: 680px;">
   <div id="post-content">
     <div class="loading">讀取中…</div>
   </div>
