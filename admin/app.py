@@ -167,6 +167,77 @@ def schedule_delete(pid):
     return redirect(url_for('schedule_list'))
 
 
+# ── Works 有紀通鑑 ────────────────────────────────
+WORK_TYPES = ['電視劇', '電影', '配信短劇', 'CD', '演唱會', '舞台劇', '其他']
+
+@app.route('/works')
+def works_list():
+    data = load('works.json')
+    works = sorted(data['works'], key=lambda x: (x['year'], x.get('type', '')), reverse=True)
+    return render_template('works_list.html', works=works)
+
+@app.route('/works/new', methods=['GET', 'POST'])
+def works_new():
+    if request.method == 'POST':
+        data = load('works.json')
+        data['works'].append({
+            'id': new_id('work'),
+            'year': int(request.form['year']),
+            'type': request.form['type'],
+            'title': request.form['title'].strip(),
+            'title_zh': request.form.get('title_zh', '').strip(),
+            'role': request.form.get('role', '').strip(),
+            'network': request.form.get('network', '').strip(),
+            'notes': request.form.get('notes', '').strip(),
+            'published': 'published' in request.form,
+            'created_at': datetime.now().isoformat()
+        })
+        save('works.json', data)
+        flash('作品已新增', 'success')
+        return redirect(url_for('works_list'))
+    return render_template('works_form.html', work=None, action='新增', types=WORK_TYPES)
+
+@app.route('/works/<wid>/edit', methods=['GET', 'POST'])
+def works_edit(wid):
+    data = load('works.json')
+    work = next((w for w in data['works'] if w['id'] == wid), None)
+    if not work:
+        flash('找不到作品', 'error')
+        return redirect(url_for('works_list'))
+    if request.method == 'POST':
+        work.update({
+            'year': int(request.form['year']),
+            'type': request.form['type'],
+            'title': request.form['title'].strip(),
+            'title_zh': request.form.get('title_zh', '').strip(),
+            'role': request.form.get('role', '').strip(),
+            'network': request.form.get('network', '').strip(),
+            'notes': request.form.get('notes', '').strip(),
+            'published': 'published' in request.form
+        })
+        save('works.json', data)
+        flash('作品已更新', 'success')
+        return redirect(url_for('works_list'))
+    return render_template('works_form.html', work=work, action='編輯', types=WORK_TYPES)
+
+@app.route('/works/<wid>/toggle', methods=['POST'])
+def works_toggle(wid):
+    data = load('works.json')
+    work = next((w for w in data['works'] if w['id'] == wid), None)
+    if work:
+        work['published'] = not work['published']
+        save('works.json', data)
+    return redirect(url_for('works_list'))
+
+@app.route('/works/<wid>/delete', methods=['POST'])
+def works_delete(wid):
+    data = load('works.json')
+    data['works'] = [w for w in data['works'] if w['id'] != wid]
+    save('works.json', data)
+    flash('作品已刪除', 'success')
+    return redirect(url_for('works_list'))
+
+
 if __name__ == '__main__':
     print('\n住海邊的帳篷君 管理後台')
     print('開啟瀏覽器：http://localhost:5001\n')
