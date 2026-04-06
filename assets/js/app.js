@@ -1,5 +1,52 @@
 // 住海邊的帳篷君 — 内田有紀繁體中文翻譯站
 
+// ── 顯示設定（夜間／字體／無障礙） ──────────────────
+function initControls() {
+  const dark      = localStorage.getItem('dark') === '1';
+  const fontLevel = parseInt(localStorage.getItem('fontLevel') || '0');
+  const a11y      = localStorage.getItem('a11y') === '1';
+
+  if (dark) document.body.classList.add('dark-mode');
+  applyFontLevel(fontLevel);
+  if (a11y) document.body.classList.add('a11y-mode');
+
+  setActive('btn-dark', dark);
+  setActive('btn-a11y', a11y);
+
+  on('btn-dark', () => {
+    const on = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark', on ? '1' : '0');
+    setActive('btn-dark', on);
+  });
+  on('btn-font-up', () => {
+    const next = (parseInt(localStorage.getItem('fontLevel') || '0') + 1) % 3;
+    applyFontLevel(next);
+    localStorage.setItem('fontLevel', next);
+  });
+  on('btn-font-down', () => {
+    const next = (parseInt(localStorage.getItem('fontLevel') || '0') + 2) % 3;
+    applyFontLevel(next);
+    localStorage.setItem('fontLevel', next);
+  });
+  on('btn-a11y', () => {
+    const on = document.body.classList.toggle('a11y-mode');
+    localStorage.setItem('a11y', on ? '1' : '0');
+    setActive('btn-a11y', on);
+  });
+}
+function applyFontLevel(n) {
+  document.body.classList.remove('font-lg', 'font-xl');
+  if (n === 1) document.body.classList.add('font-lg');
+  if (n === 2) document.body.classList.add('font-xl');
+}
+function setActive(id, active) {
+  document.getElementById(id)?.classList.toggle('active', active);
+}
+function on(id, fn) {
+  document.getElementById(id)?.addEventListener('click', fn);
+}
+document.addEventListener('DOMContentLoaded', initControls);
+
 async function loadData(type) {
   const res = await fetch(`data/${type}.json`);
   if (!res.ok) throw new Error(`無法載入 ${type}.json`);
