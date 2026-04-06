@@ -76,6 +76,7 @@
     <div class="lbl">內容</div>
     <a href="/voice" {% if 'voice' in request.path %}class="on"{% endif %}>Voice 文章</a>
     <a href="/schedule" {% if 'schedule' in request.path %}class="on"{% endif %}>Schedule 行程</a>
+    <a href="/works" {% if 'works' in request.path %}class="on"{% endif %}>有紀通鑑</a>
   </aside>
   <main class="adm-main">
     {% with msgs = get_flashed_messages(with_categories=true) %}
