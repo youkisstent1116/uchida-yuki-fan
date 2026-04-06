@@ -275,12 +275,15 @@ function renderTimeline() {
     return;
   }
 
-  // 依年份分組（降冪）
+  // 依年份分組，年份內依月份降冪（0=不確定排最後）
   const byYear = {};
   filtered.forEach(w => {
     if (!byYear[w.year]) byYear[w.year] = [];
     byYear[w.year].push(w);
   });
+  Object.values(byYear).forEach(arr =>
+    arr.sort((a, b) => (b.month || 0) - (a.month || 0))
+  );
   const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
   const html = years.map(year => `
@@ -300,6 +303,8 @@ function renderTimeline() {
 
 function workHTML(w) {
   const titleZh = w.title_zh ? `<span class="work-title-zh">${escapeHTML(w.title_zh)}</span>` : '';
+  const monthTag = (w.month && w.month > 0)
+    ? `<div class="work-month">${String(w.month).padStart(2,'0')}月</div>` : '';
   const metaParts = [];
   if (w.role)    metaParts.push(`飾 ${escapeHTML(w.role)}`);
   if (w.network) metaParts.push(escapeHTML(w.network));
@@ -309,7 +314,10 @@ function workHTML(w) {
 
   return `
     <div class="work-item">
-      <div><span class="work-type-tag tag-${escapeHTML(w.type)}">${escapeHTML(w.type)}</span></div>
+      <div class="work-tag-col">
+        ${monthTag}
+        <span class="work-type-tag tag-${escapeHTML(w.type)}">${escapeHTML(w.type)}</span>
+      </div>
       <div class="work-info">
         <div class="work-title">${escapeHTML(w.title)}${titleZh}</div>
         ${meta}${notes}
