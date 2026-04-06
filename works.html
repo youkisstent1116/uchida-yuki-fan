@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有紀通鑑 — 住海邊的帳篷君</title>
+  <meta name="description" content="内田有紀作品年表">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#main-content" class="skip-link">跳到主要內容</a>
+  <div class="header-inner">
+    <a href="index.html" class="site-title">
+      住海邊的帳篷君
+      <small>UCHIDA YUKI FAN PAGE</small>
+    </a>
+    <div class="header-right">
+      <nav>
+        <a href="voice.html">VOICE</a>
+        <a href="schedule.html">SCHEDULE</a>
+        <a href="works.html" class="active">通鑑</a>
+      </nav>
+      <div class="a11y-controls" role="group" aria-label="顯示設定">
+        <button class="ctrl-btn" id="btn-font-down" aria-label="縮小字體">A−</button>
+        <button class="ctrl-btn" id="btn-font-up"   aria-label="放大字體">A+</button>
+        <button class="ctrl-btn" id="btn-dark"      aria-label="切換夜間模式">🌙</button>
+        <button class="ctrl-btn" id="btn-a11y"      aria-label="切換無障礙模式">♿</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="main-content">
+
+  <div class="page-header">
+    <div class="page-eyebrow">Works</div>
+    <h1 class="page-title-lg">有紀通鑑</h1>
+    <p class="page-desc">内田有紀歷年作品年表</p>
+  </div>
+
+  <!-- 類型篩選 -->
+  <div class="works-filter" role="group" aria-label="依類型篩選">
+    <button class="filter-btn active" data-type="all">全部</button>
+    <button class="filter-btn" data-type="電視劇">電視劇</button>
+    <button class="filter-btn" data-type="電影">電影</button>
+    <button class="filter-btn" data-type="配信短劇">配信短劇</button>
+    <button class="filter-btn" data-type="CD">CD</button>
+    <button class="filter-btn" data-type="演唱會">演唱會</button>
+    <button class="filter-btn" data-type="舞台劇">舞台劇</button>
+  </div>
+
+  <div id="works-timeline" aria-live="polite">
+    <div class="loading">讀取中…</div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-name">住海邊的帳篷君</div>
+    <div class="footer-notice">
+      本站為非官方粉絲翻譯網站，Voice 與 Schedule 內容之翻譯與轉載已取得相關授權。<br>
+      本サイトは非公式のファンサイトです。Voiceおよびスケジュールの翻訳掲載については、関係者より許諾を得ております。
+    </div>
+    <div class="footer-official">
+      <a href="https://10-beans.com/" target="_blank" rel="noopener">内田有紀 公式サイト 10-beans.com ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script>initWorksPage();</script>
+</body>
+</html>
