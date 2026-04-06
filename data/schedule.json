@@ -1,3 +1,15 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "sch_20260406_38f34b",
+      "date": "2026-02-28",
+      "end_date": "2026-02-28",
+      "media_type": "電視",
+      "title": "テレビ東京 『新 美の巨人たち』 大丸ヴィラ",
+      "translated_content": "東京電視台 《新 美的巨人們》大丸別墅",
+      "link": "https://www.tv-tokyo.co.jp/kyojin/index.html",
+      "published": true,
+      "created_at": "2026-04-06T09:28:49.360577"
+    }
+  ]
 }
