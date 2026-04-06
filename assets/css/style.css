@@ -281,6 +281,103 @@ nav a:hover, nav a.active { color: var(--accent); }
 .footer-official { font-size: 11px; margin-top: 10px; }
 .footer-official a { color: var(--accent); }
 
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 13px;
+  z-index: 200;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 0; outline: none; }
+
+/* ── Header controls ── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.a11y-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+}
+.ctrl-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 5px 7px;
+  border-radius: 3px;
+  transition: all 0.15s;
+  font-family: 'Noto Sans TC', sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+.ctrl-btn:hover { color: var(--accent); background: var(--accent-light); }
+.ctrl-btn.active { color: var(--accent); background: var(--accent-light); }
+
+/* ── Keyboard focus (all modes) ── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Dark mode ── */
+body.dark-mode {
+  --bg: #151b25;
+  --bg-card: #1c2435;
+  --text-primary: #dce4f0;
+  --text-secondary: #8a9ab0;
+  --text-muted: #556070;
+  --border: #263040;
+  --accent: #9a8870;
+  --accent-hover: #b8a688;
+  --accent-light: #1e2530;
+}
+body.dark-mode .site-header { background: #111720; }
+body.dark-mode .site-footer { background: #111720; }
+body.dark-mode .page-btn { background: var(--bg-card); }
+
+/* ── Font size levels ── */
+body.font-lg .post-body,
+body.font-lg .voice-excerpt,
+body.font-lg .schedule-content { font-size: 16px; }
+body.font-lg .voice-date,
+body.font-lg .schedule-date { font-size: 14px; }
+
+body.font-xl .post-body,
+body.font-xl .voice-excerpt,
+body.font-xl .schedule-content { font-size: 18px; }
+body.font-xl .voice-date,
+body.font-xl .schedule-date { font-size: 15px; }
+
+/* ── Accessibility mode ── */
+body.a11y-mode nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+body.a11y-mode .ctrl-btn { min-height: 36px; min-width: 36px; }
+body.a11y-mode .voice-card { padding: 28px; }
+body.a11y-mode .page-btn { width: 44px; height: 44px; font-size: 14px; }
+body.a11y-mode .schedule-item { padding: 22px 0; gap: 20px; }
+body.a11y-mode *:focus,
+body.a11y-mode *:focus-visible {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 3px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .schedule-item { grid-template-columns: 90px 1fr; }
