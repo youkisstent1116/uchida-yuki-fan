@@ -23,48 +23,16 @@
       "published": true
     },
     {
-      "id": "work_1995_001",
-      "year": 1995,
+      "id": "work_20260406_37cca2",
+      "year": 1992,
       "type": "電視劇",
-      "title": "星の金貨",
-      "title_zh": "星之金幣",
-      "role": "大石幸子／さとみ",
-      "network": "日本テレビ",
+      "title": "その時、ハートは盗まれた",
+      "title_zh": "是誰偷走我的心",
+      "role": "麻生早紀",
+      "network": "富士電視台",
       "notes": "",
-      "published": true
-    },
-    {
-      "id": "work_1996_001",
-      "year": 1996,
-      "type": "電視劇",
-      "title": "ピュア",
-      "title_zh": "",
-      "role": "鶴岡はるか",
-      "network": "フジテレビ",
-      "notes": "",
-      "published": true
-    },
-    {
-      "id": "work_1999_001",
-      "year": 1999,
-      "type": "電視劇",
-      "title": "ケイゾク",
-      "title_zh": "",
-      "role": "柴田真緒",
-      "network": "TBS",
-      "notes": "",
-      "published": true
-    },
-    {
-      "id": "work_2000_001",
-      "year": 2000,
-      "type": "電影",
-      "title": "ケイゾク／映画 BEAUTIFUL DREAMER",
-      "title_zh": "",
-      "role": "柴田真緒",
-      "network": "",
-      "notes": "",
-      "published": true
+      "published": true,
+      "created_at": "2026-04-06T09:19:29.015516"
     }
   ]
 }
