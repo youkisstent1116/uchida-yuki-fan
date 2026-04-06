@@ -18,7 +18,7 @@
     </a>
     <div class="header-right">
       <nav>
-        <a href="voice.html" class="active">VOICE</a>
+        <a href="voice.html" class="active" aria-current="page">VOICE</a>
         <a href="schedule.html">SCHEDULE</a>
       </nav>
       <div class="a11y-controls" role="group" aria-label="顯示設定">
@@ -36,10 +36,10 @@
     <div class="page-label">Voice</div>
     <div class="page-title-jp">内田有紀的近況分享</div>
   </div>
-  <div class="voice-grid" id="voice-list">
+  <div class="voice-grid" id="voice-list" aria-live="polite" aria-label="Voice 文章列表">
     <div class="loading">讀取中…</div>
   </div>
-  <div class="pagination" id="voice-pagination"></div>
+  <nav class="pagination" id="voice-pagination" aria-label="分頁導覽"></nav>
 </main>
 
 <footer class="site-footer">
