@@ -236,3 +236,81 @@ function escapeHTML(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+// ── 有紀通鑑 ──────────────────────────────────────────
+let allWorks = [];
+let activeFilter = 'all';
+
+async function initWorksPage() {
+  try {
+    const data = await loadData('works');
+    allWorks = data.works.filter(w => w.published);
+    renderTimeline();
+    initFilter();
+  } catch (e) {
+    setHTML('works-timeline', '<p class="empty-state">載入失敗，請重新整理</p>');
+  }
+}
+
+function initFilter() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.type;
+      renderTimeline();
+    });
+  });
+}
+
+function renderTimeline() {
+  const filtered = activeFilter === 'all'
+    ? allWorks
+    : allWorks.filter(w => w.type === activeFilter);
+
+  if (filtered.length === 0) {
+    setHTML('works-timeline', '<p class="empty-state">此類型尚無作品資料</p>');
+    return;
+  }
+
+  // 依年份分組（降冪）
+  const byYear = {};
+  filtered.forEach(w => {
+    if (!byYear[w.year]) byYear[w.year] = [];
+    byYear[w.year].push(w);
+  });
+  const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+  const html = years.map(year => `
+    <div class="timeline-year-block">
+      <div class="timeline-year-heading">
+        <span class="timeline-year">${year}</span>
+        <span class="timeline-year-line" aria-hidden="true"></span>
+      </div>
+      <div class="timeline-works">
+        ${byYear[year].map(workHTML).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  setHTML('works-timeline', html);
+}
+
+function workHTML(w) {
+  const titleZh = w.title_zh ? `<span class="work-title-zh">${escapeHTML(w.title_zh)}</span>` : '';
+  const metaParts = [];
+  if (w.role)    metaParts.push(`飾 ${escapeHTML(w.role)}`);
+  if (w.network) metaParts.push(escapeHTML(w.network));
+  const meta = metaParts.length ? `<div class="work-meta">${metaParts.join('　')}</div>` : '';
+  const notes = w.notes ? `<div class="work-notes">${escapeHTML(w.notes)}</div>` : '';
+  const tagClass = `tag-${w.type}` in document.createElement('span').style ? `tag-${w.type}` : 'tag-其他';
+
+  return `
+    <div class="work-item">
+      <div><span class="work-type-tag tag-${escapeHTML(w.type)}">${escapeHTML(w.type)}</span></div>
+      <div class="work-info">
+        <div class="work-title">${escapeHTML(w.title)}${titleZh}</div>
+        ${meta}${notes}
+      </div>
+    </div>`;
+}
