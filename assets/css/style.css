@@ -281,10 +281,49 @@ nav a:hover, nav a.active { color: var(--accent); }
   background: #fff;
 }
 .footer-inner { max-width: 900px; margin: 0 auto; }
-.footer-name { font-size: 13px; font-weight: 400; margin-bottom: 8px; }
+.footer-name { font-size: 13px; font-weight: 400; margin-bottom: 12px; }
 .footer-notice { font-size: 11px; color: var(--text-muted); line-height: 1.9; }
 .footer-official { font-size: 11px; margin-top: 10px; }
 .footer-official a { color: var(--accent); }
+
+/* Social icons */
+.footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 16px; }
+.footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-social a:hover { color: var(--accent); border-color: var(--accent); }
+.footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+/* Site intro */
+.site-intro {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  margin-bottom: 48px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.intro-greeting { font-size: 15px; margin-bottom: 10px; }
+.intro-tags {
+  display: flex; flex-wrap: wrap; gap: 8px 20px;
+  padding: 14px 0; margin: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.intro-tag { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.intro-tag-label {
+  font-size: 10px; letter-spacing: 0.1em;
+  padding: 2px 8px;
+  background: var(--accent-light); color: var(--accent);
+  border-radius: 2px; white-space: nowrap;
+}
+.intro-a11y { font-size: 13px; color: var(--text-secondary); }
+@media (max-width: 640px) { .site-intro { padding: 20px 18px; } }
 
 /* ── Skip link ── */
 .skip-link {
