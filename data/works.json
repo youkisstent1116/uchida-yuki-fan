@@ -8,7 +8,7 @@
       "title_zh": "穿越時空的少女",
       "role": "芳山和子",
       "network": "フジテレビ富士電視台",
-      "notes": "",
+      "notes": "主演",
       "published": true
     },
     {
@@ -33,6 +33,30 @@
       "notes": "",
       "published": true,
       "created_at": "2026-04-06T09:19:29.015516"
+    },
+    {
+      "id": "work_20260406_1bb0c1",
+      "year": 1993,
+      "type": "電視劇",
+      "title": "ひとつ屋根の下",
+      "title_zh": "一個屋簷下",
+      "role": "日吉利奈",
+      "network": "フジテレビ富士電視台",
+      "notes": "",
+      "published": true,
+      "created_at": "2026-04-06T09:55:50.814683"
+    },
+    {
+      "id": "work_20260406_5f679c",
+      "year": 1993,
+      "type": "電視劇",
+      "title": "If もしも",
+      "title_zh": "if 如果",
+      "role": "清水さおり",
+      "network": "フジテレビ富士電視台",
+      "notes": "主演\r\nこの夏、あなたにぴったりの髪型は?ロングかショートか\r\n這個夏天、適合你的髮型是長髮還是短髮？",
+      "published": true,
+      "created_at": "2026-04-06T09:57:39.939896"
     }
   ]
 }
