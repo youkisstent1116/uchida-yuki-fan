@@ -138,13 +138,18 @@ nav a:hover, nav a.active { color: var(--accent); }
 .schedule-list { margin-bottom: 64px; }
 .schedule-item {
   display: grid;
-  grid-template-columns: 110px 56px 1fr;
+  grid-template-columns: 170px 1fr;
   gap: 16px;
   align-items: start;
   padding: 18px 0;
   border-bottom: 1px solid var(--border);
 }
 .schedule-item:first-child { border-top: 1px solid var(--border); }
+.schedule-item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .schedule-date {
   font-size: 12px;
   font-family: 'Cormorant Garamond', serif;
@@ -518,9 +523,48 @@ body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  .schedule-item { grid-template-columns: 90px 1fr; }
-  .schedule-type { display: none; }
+  /* Header：兩行排列 */
+  .site-header { padding: 0 16px; }
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 0;
+    gap: 6px;
+  }
+  .site-title small { display: none; }
+  .site-title { font-size: 13px; }
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  nav { display: flex; align-items: center; }
+  nav a { margin-left: 0; margin-right: 14px; font-size: 11px; letter-spacing: 0.08em; }
+  .a11y-controls { padding-left: 0; border-left: none; gap: 2px; }
+  .ctrl-btn { padding: 3px 5px; font-size: 10px; }
+
+  /* Schedule：改為垂直堆疊 */
+  .schedule-item {
+    display: block;
+    padding: 16px 0;
+  }
+  .schedule-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .schedule-date { font-size: 12px; }
+  .schedule-type { display: inline-block; }
+  .schedule-content { font-size: 14px; }
+
+  /* Voice */
   .voice-grid { grid-template-columns: 1fr; }
-  nav a { margin-left: 18px; }
-  .main-content { padding: 36px 18px; }
+  .main-content { padding: 32px 16px; }
+
+  /* Works 時間軸 */
+  .work-item { grid-template-columns: 64px 1fr; gap: 8px 12px; }
+  .timeline-year { font-size: 24px; }
+  .works-filter { gap: 6px; }
+  .filter-btn { padding: 4px 10px; font-size: 11px; }
 }
