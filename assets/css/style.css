@@ -378,6 +378,136 @@ body.a11y-mode *:focus-visible {
   outline-offset: 3px;
 }
 
+/* ── Works 有紀通鑑 ── */
+.page-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title-lg {
+  font-size: 28px;
+  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.page-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+/* 篩選列 */
+.works-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* 時間軸 */
+.timeline-year-block { margin-bottom: 48px; }
+.timeline-year-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.timeline-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--text-muted);
+  min-width: 60px;
+  letter-spacing: 0.02em;
+}
+.timeline-year-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.timeline-works { display: flex; flex-direction: column; gap: 0; }
+.work-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.work-item:last-child { border-bottom: none; }
+.work-type-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-top: 2px;
+  text-align: center;
+}
+/* 各類型顏色 */
+.tag-電視劇  { background: #E3EEF9; color: #2471A3; }
+.tag-電影    { background: #EDE0F5; color: #7D3C98; }
+.tag-配信短劇 { background: #D5EEF0; color: #117A8B; }
+.tag-CD      { background: #FDEBD0; color: #BA6A1A; }
+.tag-演唱會   { background: #FDEBF2; color: #B5316A; }
+.tag-舞台劇   { background: #D5F5E3; color: #1E8449; }
+.tag-其他    { background: #F0F0F0; color: #666; }
+
+.work-info { }
+.work-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.work-title-zh {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+.work-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  line-height: 1.6;
+}
+.work-notes {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.6;
+}
+
+/* dark mode works */
+body.dark-mode .tag-電視劇  { background: #1A3050; color: #6AACDC; }
+body.dark-mode .tag-電影    { background: #2D1F40; color: #C39BD3; }
+body.dark-mode .tag-配信短劇 { background: #0E2D32; color: #76D7C4; }
+body.dark-mode .tag-CD      { background: #3D2508; color: #F0A862; }
+body.dark-mode .tag-演唱會   { background: #3D0A20; color: #F1948A; }
+body.dark-mode .tag-舞台劇   { background: #0B3020; color: #7DCEA0; }
+body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .schedule-item { grid-template-columns: 90px 1fr; }
