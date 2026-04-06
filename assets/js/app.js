@@ -218,7 +218,10 @@ function renderPagination(containerId, total, perPage, current, fnName) {
 }
 
 function btn(onclick, label, active = false) {
-  return `<button class="page-btn${active ? ' active' : ''}" onclick="${onclick}">${label}</button>`;
+  const isNum = typeof label === 'number';
+  const ariaLabel = isNum ? `第 ${label} 頁` : (label === '‹' ? '上一頁' : '下一頁');
+  const ariaCurrent = active ? ' aria-current="page"' : '';
+  return `<button class="page-btn${active ? ' active' : ''}" onclick="${onclick}" aria-label="${ariaLabel}"${ariaCurrent}>${label}</button>`;
 }
 
 function setHTML(id, html) {
