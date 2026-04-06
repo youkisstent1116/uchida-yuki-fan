@@ -398,7 +398,9 @@ body.font-lg .post-body,
 body.font-lg .voice-excerpt,
 body.font-lg .schedule-content,
 body.font-lg .work-title,
-body.font-lg .work-meta { font-size: 16px; }
+body.font-lg .work-meta,
+body.font-lg .site-intro p,
+body.font-lg .intro-tag { font-size: 16px; }
 body.font-lg .voice-date,
 body.font-lg .schedule-date,
 body.font-lg .work-notes { font-size: 14px; }
@@ -408,7 +410,9 @@ body.font-xl .post-body,
 body.font-xl .voice-excerpt,
 body.font-xl .schedule-content,
 body.font-xl .work-title,
-body.font-xl .work-meta { font-size: 18px; }
+body.font-xl .work-meta,
+body.font-xl .site-intro p,
+body.font-xl .intro-tag { font-size: 18px; }
 body.font-xl .voice-date,
 body.font-xl .schedule-date,
 body.font-xl .work-notes { font-size: 15px; }
