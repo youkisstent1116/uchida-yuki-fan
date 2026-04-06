@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}有紀通鑑 管理{% endblock %}
+{% block content %}
+<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
+  <h2 class="page-title" style="margin-bottom:0">有紀通鑑 作品管理</h2>
+  <a href="/works/new" class="btn btn-primary">+ 新增作品</a>
+</div>
+
+{% if works %}
+<table>
+  <thead>
+    <tr>
+      <th>年份</th>
+      <th>類型</th>
+      <th>作品名稱</th>
+      <th>角色</th>
+      <th>狀態</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for work in works %}
+    <tr>
+      <td style="font-family:monospace; color:#888;">{{ work.year }}</td>
+      <td><span class="badge" style="background:#f0ebe3; color:#7c6a54;">{{ work.type }}</span></td>
+      <td>
+        <div style="font-size:14px;">{{ work.title }}</div>
+        {% if work.title_zh %}<div style="font-size:12px; color:#aaa;">{{ work.title_zh }}</div>{% endif %}
+      </td>
+      <td style="font-size:13px; color:#666;">{{ work.role or '—' }}</td>
+      <td>
+        {% if work.published %}
+          <span class="badge badge-green">已發布</span>
+        {% else %}
+          <span class="badge badge-gray">草稿</span>
+        {% endif %}
+      </td>
+      <td style="white-space:nowrap">
+        <a href="/works/{{ work.id }}/edit" class="btn btn-sm btn-outline">編輯</a>
+        &nbsp;
+        <form method="post" action="/works/{{ work.id }}/toggle" style="display:inline">
+          <button type="submit" class="btn btn-sm btn-outline">{{ '下架' if work.published else '上架' }}</button>
+        </form>
+        &nbsp;
+        <form method="post" action="/works/{{ work.id }}/delete" style="display:inline"
+              onsubmit="return confirm('確定刪除此作品？')">
+          <button type="submit" class="btn btn-sm" style="background:#fde8e8; color:#c0392b;">刪除</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div style="text-align:center; padding:60px; color:#aaa;">尚無作品資料，點擊「新增作品」開始建立年表</div>
+{% endif %}
+{% endblock %}
