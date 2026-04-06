@@ -352,15 +352,23 @@ body.dark-mode .page-btn { background: var(--bg-card); }
 /* ── Font size levels ── */
 body.font-lg .post-body,
 body.font-lg .voice-excerpt,
-body.font-lg .schedule-content { font-size: 16px; }
+body.font-lg .schedule-content,
+body.font-lg .work-title,
+body.font-lg .work-meta { font-size: 16px; }
 body.font-lg .voice-date,
-body.font-lg .schedule-date { font-size: 14px; }
+body.font-lg .schedule-date,
+body.font-lg .work-notes { font-size: 14px; }
+body.font-lg .timeline-year { font-size: 36px; }
 
 body.font-xl .post-body,
 body.font-xl .voice-excerpt,
-body.font-xl .schedule-content { font-size: 18px; }
+body.font-xl .schedule-content,
+body.font-xl .work-title,
+body.font-xl .work-meta { font-size: 18px; }
 body.font-xl .voice-date,
-body.font-xl .schedule-date { font-size: 15px; }
+body.font-xl .schedule-date,
+body.font-xl .work-notes { font-size: 15px; }
+body.font-xl .timeline-year { font-size: 40px; }
 
 /* ── Accessibility mode ── */
 body.a11y-mode nav a {
