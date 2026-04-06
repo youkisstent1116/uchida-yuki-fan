@@ -3,7 +3,7 @@
     {
       "id": "work_1994_001",
       "year": 1994,
-      "month": 10,
+      "month": 2,
       "type": "電視劇",
       "title": "時をかける少女",
       "title_zh": "穿越時空的少女",
@@ -16,7 +16,7 @@
       "id": "work_1994_002",
       "year": 1994,
       "month": 10,
-      "type": "音樂",
+      "type": "CD",
       "title": "TENCAを取ろう! -内田の野望-",
       "title_zh": "",
       "role": "",
@@ -27,7 +27,7 @@
     {
       "id": "work_20260406_37cca2",
       "year": 1992,
-      "month": 0,
+      "month": 11,
       "type": "電視劇",
       "title": "その時、ハートは盗まれた",
       "title_zh": "是誰偷走我的心",
@@ -53,7 +53,7 @@
     {
       "id": "work_20260406_5f679c",
       "year": 1993,
-      "month": 0,
+      "month": 7,
       "type": "電視劇",
       "title": "If もしも",
       "title_zh": "if 如果",
@@ -62,6 +62,58 @@
       "notes": "主演\r\nこの夏、あなたにぴったりの髪型は?ロングかショートか\r\n這個夏天、適合你的髮型是長髮還是短髮？",
       "published": true,
       "created_at": "2026-04-06T09:57:39.939896"
+    },
+    {
+      "id": "work_20260406_f0e27d",
+      "year": 1993,
+      "month": 7,
+      "type": "電視劇",
+      "title": "じゃじゃ馬ならし",
+      "title_zh": "淘氣乖乖女",
+      "role": "玉置亞矢",
+      "network": "フジテレビ富士電視台",
+      "notes": "",
+      "published": true,
+      "created_at": "2026-04-06T10:08:15.107874"
+    },
+    {
+      "id": "work_20260406_a26393",
+      "year": 1995,
+      "month": 4,
+      "type": "CD",
+      "title": "明日は明日の風が吹く",
+      "title_zh": "",
+      "role": "",
+      "network": "",
+      "notes": "單曲",
+      "published": true,
+      "created_at": "2026-04-06T10:08:52.273043"
+    },
+    {
+      "id": "work_20260406_1d64bc",
+      "year": 1995,
+      "month": 4,
+      "type": "CD",
+      "title": "Only You",
+      "title_zh": "",
+      "role": "",
+      "network": "",
+      "notes": "單曲",
+      "published": true,
+      "created_at": "2026-04-06T10:09:28.916711"
+    },
+    {
+      "id": "work_20260406_b2c0de",
+      "year": 2025,
+      "month": 1,
+      "type": "電影",
+      "title": "劇映画 孤独のグルメ",
+      "title_zh": "電影版孤獨的美食家",
+      "role": "志穂",
+      "network": "東宝",
+      "notes": "2025.3.14 台灣上映(采昌)",
+      "published": true,
+      "created_at": "2026-04-06T10:12:14.764115"
     }
   ]
 }
