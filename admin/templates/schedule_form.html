@@ -18,7 +18,7 @@
     <div class="field">
       <label>媒體類型</label>
       <select name="media_type" required>
-        {% for t in ['電視','電影','廣播','雜誌','舞台劇','活動','其他'] %}
+        {% for t in ['電視','電影','廣播','雜誌','舞台劇','廣告','活動','其他'] %}
           <option value="{{ t }}" {{ 'selected' if post and post.media_type == t }}>{{ t }}</option>
         {% endfor %}
       </select>
