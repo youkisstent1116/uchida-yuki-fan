@@ -156,9 +156,100 @@ async function initSchedulePage() {
     const data = await loadData('schedule');
     _allSchedule = publishedPosts(data).sort((a, b) => b.date.localeCompare(a.date));
     renderSchedulePage(1);
+    initCalendar();
   } catch (e) {
     setHTML('schedule-list', '<p class="empty-state">資料載入失敗</p>');
   }
+}
+
+// ── 行事曆 ─────────────────────────────────────────
+let _calYear, _calMonth, _calSelected = null;
+
+function initCalendar() {
+  const now = new Date();
+  _calYear = now.getFullYear();
+  _calMonth = now.getMonth();
+  document.getElementById('cal-prev').onclick = () => {
+    if (_calMonth === 0) { _calYear--; _calMonth = 11; } else _calMonth--;
+    renderCal();
+  };
+  document.getElementById('cal-next').onclick = () => {
+    if (_calMonth === 11) { _calYear++; _calMonth = 0; } else _calMonth++;
+    renderCal();
+  };
+  renderCal();
+}
+
+function renderCal() {
+  const y = _calYear, m = _calMonth;
+  document.getElementById('cal-title').textContent = `${y}年${m + 1}月`;
+
+  const eventMap = buildCalEventMap();
+  const firstDay = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+  const todayKey = dateKey(new Date());
+
+  let html = '';
+  for (let i = 0; i < firstDay; i++) html += '<div class="cal-cell cal-empty"></div>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const key = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const events = eventMap[key] || [];
+    const dow = new Date(y, m, d).getDay();
+    let cls = 'cal-cell';
+    if (dow === 0) cls += ' cal-sun';
+    if (dow === 6) cls += ' cal-sat';
+    if (key === todayKey) cls += ' cal-today';
+    if (key === _calSelected) cls += ' cal-selected';
+    if (events.length) cls += ' cal-has-events';
+
+    const types = [...new Set(events.map(e => e.media_type))].slice(0, 3);
+    const dots = types.map(t => `<span class="cal-dot cal-dot-${t}"></span>`).join('');
+    const label = `${m+1}月${d}日${events.length ? '，有' + events.length + '個行程' : ''}`;
+
+    html += `<div class="${cls}" onclick="calSelect('${key}')" role="button" tabindex="0"
+      aria-label="${label}" onkeydown="if(event.key==='Enter'||event.key===' ')calSelect('${key}')">
+      <span class="cal-day-num">${d}</span>
+      <div class="cal-dots">${dots}</div>
+    </div>`;
+  }
+  document.getElementById('cal-grid').innerHTML = html;
+}
+
+function buildCalEventMap() {
+  const map = {};
+  _allSchedule.forEach(s => {
+    const start = new Date(s.date + 'T00:00:00');
+    const end = s.end_date ? new Date(s.end_date + 'T00:00:00') : new Date(start);
+    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1))
+      (map[dateKey(d)] = map[dateKey(d)] || []).push(s);
+  });
+  return map;
+}
+
+function dateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function calSelect(key) {
+  _calSelected = key;
+  renderCal();
+  const [, m, d] = key.split('-');
+  document.getElementById('cal-filter-label').textContent = `${parseInt(m)}月${parseInt(d)}日的行程`;
+  document.getElementById('cal-filter-bar').style.display = 'flex';
+
+  const filtered = _allSchedule.filter(s => key >= s.date && key <= (s.end_date || s.date));
+  setHTML('schedule-list', filtered.length
+    ? filtered.map(scheduleItemHTML).join('')
+    : '<p class="empty-state">這天沒有行程</p>');
+  setHTML('schedule-pagination', '');
+}
+
+function clearCalFilter() {
+  _calSelected = null;
+  renderCal();
+  document.getElementById('cal-filter-bar').style.display = 'none';
+  renderSchedulePage(1);
 }
 
 function renderSchedulePage(page) {
