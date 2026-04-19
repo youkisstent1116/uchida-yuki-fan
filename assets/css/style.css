@@ -112,7 +112,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   box-shadow: 0 2px 16px rgba(124, 106, 84, 0.09);
 }
 .voice-date {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-muted);
   letter-spacing: 0.1em;
   margin-bottom: 10px;
@@ -151,7 +151,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   gap: 6px;
 }
 .schedule-date {
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Cormorant Garamond', serif;
   color: var(--text-muted);
   padding-top: 3px;
@@ -571,6 +571,117 @@ body.dark-mode .tag-演唱會   { background: #3D0A20; color: #F1948A; }
 body.dark-mode .tag-舞台劇   { background: #0B3020; color: #7DCEA0; }
 body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
 
+/* ── Calendar ── */
+.cal-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px 20px 16px;
+  margin-bottom: 40px;
+}
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.cal-nav {
+  background: none;
+  border: 1px solid var(--border);
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  line-height: 1;
+}
+.cal-nav:hover { border-color: var(--accent); color: var(--accent); }
+.cal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+.cal-weekdays span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 3px 0;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 56px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  transition: background 0.15s;
+  padding: 6px 4px 4px;
+  gap: 4px;
+}
+.cal-cell:not(.cal-empty):hover { background: var(--accent-light); }
+.cal-empty { cursor: default; pointer-events: none; border-color: transparent; }
+.cal-day-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+.cal-sun .cal-day-num { color: #B03A2E; }
+.cal-sat .cal-day-num { color: #2E75B6; }
+.cal-today { background: var(--accent-light); }
+.cal-today .cal-day-num { color: var(--accent); font-weight: 500; }
+.cal-selected { background: var(--accent) !important; border-color: var(--accent) !important; }
+.cal-selected .cal-day-num { color: #fff !important; }
+.cal-selected .cal-dot { opacity: 0.8; }
+.cal-dots { display: flex; gap: 2px; flex-wrap: wrap; justify-content: center; }
+.cal-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.cal-dot-電視   { background: #5B9BD5; }
+.cal-dot-電影   { background: #9B59B6; }
+.cal-dot-廣播   { background: #1ABC9C; }
+.cal-dot-雜誌   { background: #E67E22; }
+.cal-dot-舞台劇  { background: #27AE60; }
+.cal-dot-廣告   { background: #E74C3C; }
+.cal-dot-活動   { background: #F39C12; }
+.cal-dot-其他   { background: #95A5A6; }
+.cal-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 7px 12px;
+  background: var(--accent-light);
+  border-left: 2px solid var(--accent);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+#cal-clear {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+  letter-spacing: 0.05em;
+}
+#cal-clear:hover { text-decoration: underline; }
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   /* Header：兩行排列 */
@@ -604,7 +715,7 @@ body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
     gap: 8px;
     margin-bottom: 6px;
   }
-  .schedule-date { font-size: 12px; }
+  .schedule-date { font-size: 13px; }
   .schedule-type { display: inline-block; }
   .schedule-content { font-size: 14px; }
 
