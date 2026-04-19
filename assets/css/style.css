@@ -662,6 +662,47 @@ body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
   line-height: 1;
 }
 .cal-birthday { font-size: 10px; margin-left: 1px; vertical-align: middle; }
+
+/* ── 生日彩蛋 ─────────────────────────────────── */
+#birthday-egg {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  cursor: pointer;
+  pointer-events: all;
+}
+.bday-float {
+  position: absolute;
+  bottom: -10%;
+  font-size: 2rem;
+  animation: bday-rise 3s ease-in forwards;
+  user-select: none;
+}
+.bday-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 36px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  animation: bday-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  white-space: nowrap;
+}
+@keyframes bday-rise {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+@keyframes bday-pop {
+  from { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+}
 .cal-sun .cal-day-num { color: #B03A2E; }
 .cal-sat .cal-day-num { color: #2E75B6; }
 .cal-today { background: var(--accent-light); }
