@@ -37,6 +37,24 @@
     <div class="page-label">Schedule</div>
     <div class="page-title-jp">内田有紀的近期行程</div>
   </div>
+
+  <!-- 行事曆 -->
+  <div class="cal-wrap" id="schedule-calendar" aria-label="行程行事曆">
+    <div class="cal-header">
+      <button class="cal-nav" id="cal-prev" aria-label="上個月">‹</button>
+      <div class="cal-title" id="cal-title"></div>
+      <button class="cal-nav" id="cal-next" aria-label="下個月">›</button>
+    </div>
+    <div class="cal-weekdays" aria-hidden="true">
+      <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-filter-bar" id="cal-filter-bar" style="display:none">
+      <span id="cal-filter-label"></span>
+      <button id="cal-clear" onclick="clearCalFilter()">顯示全部 ×</button>
+    </div>
+  </div>
+
   <div class="schedule-list" id="schedule-list" aria-live="polite" aria-label="行程列表">
     <div class="loading">讀取中…</div>
   </div>
