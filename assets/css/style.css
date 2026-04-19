@@ -604,7 +604,25 @@ body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
   font-size: 16px;
   letter-spacing: 0.12em;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+.cal-title select {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  padding: 0 2px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.cal-title select:focus { outline: 2px solid var(--accent); border-radius: 2px; }
+.cal-title-month { letter-spacing: 0.12em; }
 .cal-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -643,6 +661,7 @@ body.dark-mode .tag-其他    { background: #2a2a2a; color: #aaa; }
   color: var(--text-secondary);
   line-height: 1;
 }
+.cal-birthday { font-size: 10px; margin-left: 1px; vertical-align: middle; }
 .cal-sun .cal-day-num { color: #B03A2E; }
 .cal-sat .cal-day-num { color: #2E75B6; }
 .cal-today { background: var(--accent-light); }
