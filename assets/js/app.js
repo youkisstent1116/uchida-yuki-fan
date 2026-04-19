@@ -249,11 +249,41 @@ function calSelect(key) {
   document.getElementById('cal-filter-label').textContent = `${parseInt(m)}月${parseInt(d)}日的行程`;
   document.getElementById('cal-filter-bar').style.display = 'flex';
 
+  if (parseInt(m) === 11 && parseInt(d) === 16) showBirthdayEgg();
+
   const filtered = _allSchedule.filter(s => key >= s.date && key <= (s.end_date || s.date));
   setHTML('schedule-list', filtered.length
     ? filtered.map(scheduleItemHTML).join('')
     : '<p class="empty-state">這天沒有行程</p>');
   setHTML('schedule-pagination', '');
+}
+
+function showBirthdayEgg() {
+  const existing = document.getElementById('birthday-egg');
+  if (existing) { existing.remove(); return; }
+
+  const overlay = document.createElement('div');
+  overlay.id = 'birthday-egg';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-label', '生日彩蛋，點擊關閉');
+  overlay.onclick = () => overlay.remove();
+
+  const emojis = ['🎈','🎂','🎉','🎈','🎊','🎈','🎉','🎂','🎊','🎈'];
+  emojis.forEach((e, i) => {
+    const el = document.createElement('span');
+    el.className = 'bday-float';
+    el.textContent = e;
+    el.style.left = (8 + i * 9) + '%';
+    el.style.animationDelay = (i * 0.12) + 's';
+    overlay.appendChild(el);
+  });
+
+  const msg = document.createElement('div');
+  msg.className = 'bday-msg';
+  msg.textContent = '🎂 生日快樂，有紀！';
+  overlay.appendChild(msg);
+
+  document.body.appendChild(overlay);
 }
 
 function clearCalFilter() {
