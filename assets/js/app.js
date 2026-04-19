@@ -182,7 +182,17 @@ function initCalendar() {
 
 function renderCal() {
   const y = _calYear, m = _calMonth;
-  document.getElementById('cal-title').textContent = `${y}年${m + 1}月`;
+
+  // Build year range: fixed start 1975, up to current year + 1
+  const minYear = 1975;
+  const maxYear = Math.max(new Date().getFullYear(), y) + 1;
+  let yearOptions = '';
+  for (let yr = maxYear; yr >= minYear; yr--)
+    yearOptions += `<option value="${yr}"${yr===y?' selected':''}>${yr}年</option>`;
+
+  document.getElementById('cal-title').innerHTML =
+    `<select id="cal-year-sel" aria-label="選擇年份" onchange="_calYear=+this.value;clearCalFilter&&(_calSelected=null);renderCal()">${yearOptions}</select>` +
+    `<span class="cal-title-month">${m + 1}月</span>`;
 
   const eventMap = buildCalEventMap();
   const firstDay = new Date(y, m, 1).getDay();
@@ -205,11 +215,12 @@ function renderCal() {
 
     const types = [...new Set(events.map(e => e.media_type))].slice(0, 3);
     const dots = types.map(t => `<span class="cal-dot cal-dot-${t}"></span>`).join('');
-    const label = `${m+1}月${d}日${events.length ? '，有' + events.length + '個行程' : ''}`;
+    const isBirthday = m === 10 && d === 16; // Nov 16 (month is 0-indexed)
+    const label = `${m+1}月${d}日${isBirthday ? '，有紀生日🎂' : ''}${events.length ? '，有' + events.length + '個行程' : ''}`;
 
     html += `<div class="${cls}" onclick="calSelect('${key}')" role="button" tabindex="0"
       aria-label="${label}" onkeydown="if(event.key==='Enter'||event.key===' ')calSelect('${key}')">
-      <span class="cal-day-num">${d}</span>
+      <span class="cal-day-num">${d}${isBirthday ? '<span class="cal-birthday" aria-hidden="true">🎂</span>' : ''}</span>
       <div class="cal-dots">${dots}</div>
     </div>`;
   }
