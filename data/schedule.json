@@ -95,9 +95,31 @@
       "media_type": "電視",
       "title": "BS12 『内田有紀の建物びより』",
       "translated_content": "BS12 《内田有紀の建物びより（內田有紀的建築日和）》",
-      "link": "https://www.twellv.co.jp/program/variety/tatemonobiyori/",
+      "link": "https://tver.jp/episodes/eplakxu5uj",
       "published": true,
       "created_at": "2026-05-18T22:20:43.819786"
+    },
+    {
+      "id": "sch_20260601_f6fbe5",
+      "date": "2026-06-01",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "家庭画報 ７月号",
+      "translated_content": "雜誌：家庭画報 7月号",
+      "link": "https://www.kateigaho.com/magazine/latest/182031",
+      "published": true,
+      "created_at": "2026-06-01T22:28:04.777121"
+    },
+    {
+      "id": "sch_20260601_e34e4f",
+      "date": "2026-06-01",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "eclat ７・８月号",
+      "translated_content": "雜誌：eclat ７・８月号",
+      "link": "https://eclat.hpplus.jp/magazine/?page=29",
+      "published": true,
+      "created_at": "2026-06-01T22:28:34.679269"
     }
   ]
 }
