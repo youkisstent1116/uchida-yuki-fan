@@ -1557,6 +1557,19 @@
       "notes": "專輯",
       "published": true,
       "created_at": "2026-04-06T12:40:29.623991"
+    },
+    {
+      "id": "work_20260602_ffe9bf",
+      "year": 2026,
+      "month": 7,
+      "type": "電視劇",
+      "title": "ラストノート",
+      "title_zh": "餘香",
+      "role": "一瀬葵",
+      "network": "フジテレビ 富士電視台",
+      "notes": "主演",
+      "published": true,
+      "created_at": "2026-06-02T21:50:35.528660"
     }
   ]
 }
