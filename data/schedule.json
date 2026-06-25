@@ -131,6 +131,28 @@
       "link": "https://www.instagram.com/reels/DZenfLFk74n/",
       "published": true,
       "created_at": "2026-06-13T19:00:29.600738"
+    },
+    {
+      "id": "sch_20260625_a66d6e",
+      "date": "2026-06-27",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ミキティダイニング』",
+      "translated_content": "富士電視台《Mikitty Dining》",
+      "link": "https://www.fujitv.co.jp/mikittydining/",
+      "published": true,
+      "created_at": "2026-06-25T22:37:56.385578"
+    },
+    {
+      "id": "sch_20260625_93ca7a",
+      "date": "2026-06-29",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『クイズ ドレミファドン』",
+      "translated_content": "富士電視台《猜歌問答 Do Re Mi Fa Don》",
+      "link": "https://www.fujitv.co.jp/doremifadon/index.html",
+      "published": true,
+      "created_at": "2026-06-25T22:41:42.714069"
     }
   ]
 }
