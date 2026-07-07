@@ -241,6 +241,28 @@
       "link": "",
       "published": true,
       "created_at": "2026-07-03T21:11:03.080727"
+    },
+    {
+      "id": "sch_20260707_94f11f",
+      "date": "2026-07-09",
+      "end_date": "2026-07-09",
+      "media_type": "雜誌",
+      "title": "Casa BRUTUS ８月号　DELVAUX 特集",
+      "translated_content": "Casa BRUTUS ８月號　DELVAUX 特集",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-07T21:49:39.146531"
+    },
+    {
+      "id": "sch_20260707_6e6773",
+      "date": "2026-07-09",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ナゾトレMAXXX』",
+      "translated_content": "富士電視台《ナゾトレMAXXX (謎題訓練 MAXXX)》",
+      "link": "https://www.fujitv.co.jp/nazotoremaxxx/",
+      "published": true,
+      "created_at": "2026-07-07T21:51:25.063053"
     }
   ]
 }
