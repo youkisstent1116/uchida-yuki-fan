@@ -245,7 +245,7 @@
     {
       "id": "sch_20260707_94f11f",
       "date": "2026-07-09",
-      "end_date": "2026-07-09",
+      "end_date": "",
       "media_type": "雜誌",
       "title": "Casa BRUTUS ８月号　DELVAUX 特集",
       "translated_content": "Casa BRUTUS ８月號　DELVAUX 特集",
@@ -263,6 +263,94 @@
       "link": "https://www.fujitv.co.jp/nazotoremaxxx/",
       "published": true,
       "created_at": "2026-07-07T21:51:25.063053"
+    },
+    {
+      "id": "sch_20260721_b20b26",
+      "date": "2026-07-09",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』第１話",
+      "translated_content": "富士電視台《餘香》第1集",
+      "link": "https://tver.jp/episodes/ep7kzalm7v",
+      "published": true,
+      "created_at": "2026-07-21T21:51:59.388520"
+    },
+    {
+      "id": "sch_20260721_fe2226",
+      "date": "2026-07-16",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』第２話",
+      "translated_content": "富士電視台《餘香》第2集",
+      "link": "https://tver.jp/episodes/epigi3zo57",
+      "published": true,
+      "created_at": "2026-07-21T21:52:52.139729"
+    },
+    {
+      "id": "sch_20260721_8a1842",
+      "date": "2026-07-22",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "TV LIFE 8/6号 表紙出演",
+      "translated_content": "TV LIFE 8/6號 封面",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-21T21:53:19.020387"
+    },
+    {
+      "id": "sch_20260721_0fdaa5",
+      "date": "2026-07-23",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "フジテレビ『ラストノート』第３話",
+      "translated_content": "富士電視台《餘香》第3集",
+      "link": "https://tver.jp/episodes/epmfl09z2b",
+      "published": true,
+      "created_at": "2026-07-21T21:53:49.351647"
+    },
+    {
+      "id": "sch_20260721_77889a",
+      "date": "2026-07-23",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "月刊ザ テレビジョン ９月号 表紙出演",
+      "translated_content": "月刊The television 9月號 封面",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-21T21:54:32.702546"
+    },
+    {
+      "id": "sch_20260721_8b2292",
+      "date": "2026-07-23",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "TV fan ９月号",
+      "translated_content": "TV fan 9月號",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-21T21:54:51.644363"
+    },
+    {
+      "id": "sch_20260721_4eaa80",
+      "date": "2026-07-24",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "TV navi ９月号",
+      "translated_content": "TV navi 9月號",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-21T21:55:11.935859"
+    },
+    {
+      "id": "sch_20260721_dfe4eb",
+      "date": "2026-07-24",
+      "end_date": "",
+      "media_type": "雜誌",
+      "title": "月刊 TV ガイド ９月号",
+      "translated_content": "月刊 TV Guide 9月號",
+      "link": "",
+      "published": true,
+      "created_at": "2026-07-21T21:55:35.073091"
     }
   ]
 }
