@@ -1570,6 +1570,19 @@
       "notes": "主演",
       "published": true,
       "created_at": "2026-06-02T21:50:35.528660"
+    },
+    {
+      "id": "work_20260830_9b3f1f",
+      "year": 2027,
+      "month": 1,
+      "type": "電影",
+      "title": "劇場版 虎に翼",
+      "title_zh": "劇場版 如虎添翼",
+      "role": "瀨川良美",
+      "network": "東寶",
+      "notes": "https://toranitsubasa.toho-movie.jp/",
+      "published": true,
+      "created_at": "2026-08-30T13:23:34.593442"
     }
   ]
 }
