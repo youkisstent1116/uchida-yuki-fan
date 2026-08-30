@@ -406,6 +406,39 @@
       "link": "https://tver.jp/episodes/epb5e37eze",
       "published": true,
       "created_at": "2026-08-17T21:16:19.752896"
+    },
+    {
+      "id": "sch_20260830_60f5dd",
+      "date": "2026-08-27",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』第８話",
+      "translated_content": "富士電視台《餘香》第8集",
+      "link": "",
+      "published": true,
+      "created_at": "2026-08-30T13:12:16.246418"
+    },
+    {
+      "id": "sch_20260830_b1381d",
+      "date": "2026-09-03",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』第９話",
+      "translated_content": "富士電視台《餘香》第9集",
+      "link": "",
+      "published": true,
+      "created_at": "2026-08-30T13:12:39.024539"
+    },
+    {
+      "id": "sch_20260830_af9d57",
+      "date": "2027-01-15",
+      "end_date": "",
+      "media_type": "電影",
+      "title": "『劇場版 虎に翼』公開🎊",
+      "translated_content": "《劇場版 如虎添翼》上映",
+      "link": "",
+      "published": true,
+      "created_at": "2026-08-30T13:14:04.665261"
     }
   ]
 }
