@@ -439,6 +439,39 @@
       "link": "https://toranitsubasa.toho-movie.jp/",
       "published": true,
       "created_at": "2026-08-30T13:14:04.665261"
+    },
+    {
+      "id": "sch_20260916_562d00",
+      "date": "2026-09-10",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』第10話",
+      "translated_content": "富士電視台《餘香》第10集",
+      "link": "https://tver.jp/episodes/epiupuz8nm",
+      "published": true,
+      "created_at": "2026-09-16T21:54:31.501651"
+    },
+    {
+      "id": "sch_20260916_a9c87e",
+      "date": "2026-09-17",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『ラストノート』最終話",
+      "translated_content": "富士電視台《餘香》完結篇",
+      "link": "",
+      "published": true,
+      "created_at": "2026-09-16T21:54:53.353835"
+    },
+    {
+      "id": "sch_20260916_2e7c4f",
+      "date": "2026-09-23",
+      "end_date": "",
+      "media_type": "活動",
+      "title": "『アベンジャーズ／エンドゲーム：アンコール』 ファンミーティング",
+      "translated_content": "《復仇者聯盟4：終局之戰》重映特別活動",
+      "link": "https://t.pia.jp/pia/event/event.do?eventCd=2635979",
+      "published": true,
+      "created_at": "2026-09-16T21:55:58.416823"
     }
   ]
 }
