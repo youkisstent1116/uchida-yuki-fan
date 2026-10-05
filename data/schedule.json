@@ -472,6 +472,50 @@
       "link": "https://t.pia.jp/pia/event/event.do?eventCd=2635979",
       "published": true,
       "created_at": "2026-09-16T21:55:58.416823"
+    },
+    {
+      "id": "sch_20261005_940987",
+      "date": "2026-09-18",
+      "end_date": "",
+      "media_type": "電影",
+      "title": "踊る大捜査線 N.E.W.",
+      "translated_content": "跳躍大搜查線 N.E.W. 客串演出",
+      "link": "",
+      "published": true,
+      "created_at": "2026-10-05T22:04:47.645226"
+    },
+    {
+      "id": "sch_20261005_b66719",
+      "date": "2026-10-05",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "フジテレビ『FNS新ドラマ大集合！ 国民的ヒットの祭典！』",
+      "translated_content": "富士電視台 『FNS 新劇大集合！國民級熱門作品祭典！』",
+      "link": "https://mezamashi.media/articles/-/352698",
+      "published": true,
+      "created_at": "2026-10-05T22:05:39.418514"
+    },
+    {
+      "id": "sch_20261005_a51366",
+      "date": "2026-10-05",
+      "end_date": "",
+      "media_type": "廣告",
+      "title": "ヤクルト本社『ヤクルト 免疫バランス』TVCM放送開始🎊",
+      "translated_content": "『養樂多免疫平衡』廣告正式播出🎊",
+      "link": "https://www.yakult.co.jp/menneki-balance/",
+      "published": true,
+      "created_at": "2026-10-05T22:06:45.537907"
+    },
+    {
+      "id": "sch_20261005_c6631d",
+      "date": "2026-10-10",
+      "end_date": "",
+      "media_type": "電視",
+      "title": "テレビ朝日『テレメンタリー2026』ナレーション出演",
+      "translated_content": "朝日電視台《Telementary 2026》擔任旁白",
+      "link": "https://www.ksb.co.jp/telementary/index_2610",
+      "published": true,
+      "created_at": "2026-10-05T22:08:12.253136"
     }
   ]
 }

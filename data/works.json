@@ -1583,6 +1583,19 @@
       "notes": "https://toranitsubasa.toho-movie.jp/",
       "published": true,
       "created_at": "2026-08-30T13:23:34.593442"
+    },
+    {
+      "id": "work_20261005_69ca09",
+      "year": 2026,
+      "month": 9,
+      "type": "電影",
+      "title": "踊る大捜査線 N.E.W.",
+      "title_zh": "跳躍大搜查線 N.E.W.",
+      "role": "篠原夏美",
+      "network": "フジテレビ 富士電視台",
+      "notes": "客串演出",
+      "published": true,
+      "created_at": "2026-10-05T22:09:41.567911"
     }
   ]
 }
